@@ -77,6 +77,12 @@ Above 1.0.0, given a version number MAJOR.MINOR.PATCH:
 Changes
 -------
 
+0.1.5
+'''''
+
+* Fixed UnicodeDecodeError for files with non-ascii characters
+* Fixed Fixing ParseError if newline is omitted at the end of a file
+
 0.1.4
 '''''
 
