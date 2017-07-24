@@ -56,7 +56,7 @@ def _process_file(filename):
     if filename == 'stdin':
         code = pycodestyle.stdin_get_value()
     else:
-        with open(filename, 'rt') as f:
+        with open(filename, 'rt', encoding='utf-8') as f:
             code = f.read()
     return _process_code(code)
 
