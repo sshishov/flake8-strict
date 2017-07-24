@@ -56,13 +56,15 @@ def _process_file(filename):
     if filename == 'stdin':
         code = pycodestyle.stdin_get_value()
     else:
-        with open(filename, 'rt') as f:
+        with open(filename, 'rt', encoding='utf-8') as f:
             code = f.read()
     return _process_code(code)
 
 
 def _process_code(code):
-    tree = _driver.parse_string(code)
+    tree = _driver.parse_string(
+        '%s%s' % (code, '\n' if code and code[-1] != '\n' else ''),
+    )
     return _process_tree(tree)
 
 
